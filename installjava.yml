@@ -1,0 +1,15 @@
+---
+- hosts: mywedbservers
+  become: yes
+  tasks:
+  - name:Install java on ubuntu
+    apt:
+     name: "{{myjavaonubuntu}}"
+     state: Latest
+    when: ansible_os_family =="Debian"
+  
+  -name: Install java on Redhat
+   yum:
+    name:"{{myjavaonredhat}}"
+    state: Latest
+   when: ansible_os_family =="RedHat"

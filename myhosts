@@ -6,3 +6,5 @@
 key= value
 mywebpackonubuntu= apache2
 mywebpackonredhat= httpd
+myjavaonubuntu= openjdk-6-jdk
+myjavaonredhat= java-11-openjdk-devel
