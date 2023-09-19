@@ -1,15 +1,15 @@
 ---
-- hosts: mywedbservers
+- hosts: myWebServers
   become: yes
   tasks:
-  - name:Install java on ubuntu
+  - name: Install java on ubuntu
     apt:
      name: "{{myjavaonubuntu}}"
      state: present
     when: ansible_os_family =="Debian"
   
-  -name: Install java on Redhat
-   yum:
-    name:"{{myjavaonredhat}}"
-    state: present
-   when: ansible_os_family =="RedHat"
+  - name: Install java on Redhat
+    dnf:
+     name: "{{myjavaonredhat}}"
+     state: present
+    when: ansible_os_family =="RedHat"
